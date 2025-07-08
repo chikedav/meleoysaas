@@ -17,28 +17,40 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto mt-10">
-      <h1 className="text-3xl font-bold mb-4">
-        Welcome back{userDetails?.full_name ? `, ${userDetails.full_name}` : ''}!
-      </h1>
+    <div className="max-w-5xl mx-auto px-6 py-12 space-y-10">
+      <section className="text-center">
+        <h1 className="text-4xl font-extrabold tracking-tight">
+          Welcome back
+          {userDetails?.full_name ? `, ${userDetails.full_name}` : ''} 👋
+        </h1>
+        <p className="text-lg text-gray-500 mt-2">
+          Here's what's happening in <span className="font-semibold text-black">Meleoy</span> today.
+        </p>
+      </section>
 
-      <p className="text-lg text-gray-600 mb-6">
-        Here's what's happening in Meleoy today:
-      </p>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="rounded-2xl border border-zinc-200 p-6 bg-white shadow-sm">
+          <h2 className="text-2xl font-semibold mb-2">🎯 Your Stats</h2>
+          <p className="text-gray-600">Points</p>
+          <p className="text-3xl font-bold text-indigo-600">
+            {userDetails?.points ?? 0}
+          </p>
+        </div>
 
-      <div className="bg-gray-100 p-4 rounded-lg mb-6">
-        <h2 className="text-xl font-semibold">🎯 Your Stats</h2>
-        <p className="mt-2">Points: {userDetails?.points ?? 0}</p>
-      </div>
+        <div className="rounded-2xl border border-zinc-200 p-6 bg-white shadow-sm">
+          <h2 className="text-2xl font-semibold mb-4">📢 Announcements</h2>
+          <ul className="space-y-2 text-gray-700 text-sm list-disc list-inside">
+            <li>🎖️ New badge system coming soon</li>
+            <li>🎁 Refer a friend & earn 100 bonus points</li>
+            <li>⚙️ AI generation engine v2 launches next week</li>
+          </ul>
+        </div>
+      </section>
 
-      <div className="bg-white border p-4 rounded-lg">
-        <h2 className="text-xl font-semibold">📢 Announcements</h2>
-        <ul className="list-disc ml-5 mt-2 text-sm text-gray-700">
-          <li>New badge system coming soon</li>
-          <li>Refer a friend and earn 100 bonus points</li>
-          <li>AI generation engine v2 launching next week!</li>
-        </ul>
-      </div>
+      <section className="rounded-2xl border border-dashed border-zinc-300 p-6 text-center bg-zinc-50">
+        <h2 className="text-lg font-medium mb-2">🚀 Something cool is coming…</h2>
+        <p className="text-gray-500">Soon you’ll be able to use your points in the Meleoy Store.</p>
+      </section>
     </div>
   );
 }
