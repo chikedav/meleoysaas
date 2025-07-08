@@ -21,12 +21,15 @@ export default function Navlinks({ user }: NavlinksProps) {
         <Link href="/" className={s.logo} aria-label="Logo">
           <Logo />
         </Link>
-        <nav className="ml-6 space-x-2 lg:block">
-          <Link href="/" className={s.link}>
+        <nav className="ml-6 flex space-x-4 items-center">
+          <Link href="/home" className="hover:underline text-white/90 text-sm">
+            Home
+          </Link>
+          <Link href="/pricing" className="hover:underline text-white/90 text-sm">
             Pricing
           </Link>
           {user && (
-            <Link href="/account" className={s.link}>
+            <Link href="/account" className="hover:underline text-white/90 text-sm">
               Account
             </Link>
           )}
